@@ -15,8 +15,19 @@
 
 
 int majorityElement(int* nums, int numsSize) {
-     // TODO: implement
-
-
+	int half = numsSize / 2;
+	for(int i = 0; i < numsSize; i++) {
+		int current = nums[i];
+		int count = 0;
+		for(int j = 0; j < numsSize; j++) {
+			if(nums[j] == current) {
+				count = count +1;
+			}
+		}
+		if(count > half) {
+			return current;
+		}
+	}
+	return -1;
 
 }
