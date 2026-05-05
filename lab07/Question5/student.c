@@ -24,5 +24,22 @@ void selectionSort(int arr[], int size) {
     // TODO: implement selection sort
     (void)arr;
     (void)size;
+
+    if(size < 2) {
+	    return;
+    }
+    for(int i = 0; i < size - 1; i++) {
+	    int min_index = i;
+	    for(int j = i + 1; j < size; j++) {
+		    if(arr[j] < arr[min_index]) {
+			    min_index = j;
+		    }
+	    }
+	    if(min_index != i) {
+		    int temp = arr[i];
+		    arr[i] = arr[min_index];
+		    arr[min_index] = temp;
+	    }
+    }
 }
 
